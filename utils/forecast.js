@@ -4,6 +4,7 @@ const request = require('request')
 function getForecast(long,lat,callback){
     const url = `http://api.weatherstack.com/current?access_key=${weatherApi}&query=${lat},${long}`
     request({url:url , json:true},(error,response)=>{
+        //connection failed
         if(error){
             callback("Unable to Connect to Weather Service")
         }
